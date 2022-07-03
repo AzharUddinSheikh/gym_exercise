@@ -12,7 +12,7 @@ const SearchExercise = ({setExercises, bodyPart, setBodyPart}) => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', 
+      const bodyPartData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', 
                                           exerciseOptions);
       setBodyParts(['all', ...bodyPartData]);
     }
