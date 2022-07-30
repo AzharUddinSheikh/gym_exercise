@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Pagination, Stack, Typography } from '@mui/material'
+import { Box } from '@mui/system'
+import { exerciseOptions, fetchData } from '../utils/fetchData'
 
-const Exercises = () => {
+
+const Exercises = ({setExercises, bodyPart, exercises}) => {
   return (
-    <div>Exercises</div>
+    <Box 
+      id='exercises'
+      sx={{mt:{lg:'110px'}}}
+      mt='50px'
+      p='20px'>
+        <Typography variant="h3" mb="46px">
+            <Stack
+            direction="row"
+            sx={{gap:{lg:'110px', x5:'50px'}}}
+            flexWrap="wrap"
+            justifyContent="center">
+              {exercises.map((exercise, index) => exercise.name )}
+            </Stack>
+        </Typography>
+    </Box>
   )
 }
 
